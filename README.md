@@ -1,3 +1,5 @@
+<img width="100%" alt="screenshot" src="https://github.com/user-attachments/assets/ba52d876-81b9-47a2-a100-15c3f3fc0e64" />
+
 # Project Update Cloner
 
 Desktop tool for packaging only the project files modified on a selected date while preserving the original folder structure.
