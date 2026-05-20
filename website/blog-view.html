@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>How to Package Changed Files | Project Update Cloner</title>
+    <meta
+      name="description"
+      content="A practical guide to packaging only changed project files with Project Update Cloner."
+    />
+    <link rel="icon" type="image/png" href="assets/app-logo.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ["Google Sans", "DM Sans", "Product Sans", "Arial", "ui-sans-serif", "system-ui", "sans-serif"],
+            },
+            colors: {
+              ink: "#080c17",
+              brand: "#2f6bff",
+              mint: "#2f6bff",
+              amber: "#5f8dff",
+              rose: "#2f6bff",
+            },
+          },
+        },
+      };
+    </script>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="bg-ink text-white antialiased">
+    <div class="site-shell overflow-hidden">
+      <header class="fixed inset-x-0 top-0 z-50 border-b border-white/10 bg-ink/75 px-5 backdrop-blur-2xl sm:px-6 lg:px-8">
+        <nav class="mx-auto flex h-16 max-w-7xl items-center justify-between">
+          <a href="index" class="flex items-center gap-3" aria-label="Project Update Cloner home">
+            <img src="assets/app-logo.png" alt="" class="h-9 w-9 rounded shadow-brand" />
+            <span class="brand-name">UpdateCloner</span>
+          </a>
+
+          <div class="hidden items-center gap-7 text-sm font-medium text-slate-300 md:flex">
+            <a href="index#features" class="nav-link">Features</a>
+            <a href="index#workflow" class="nav-link">Workflow</a>
+            <a href="blogs" class="nav-link text-white">Blogs</a>
+            <a href="index#download" class="nav-link">Download</a>
+          </div>
+
+          <div class="hidden items-center gap-3 md:flex">
+            <a href="index#features" class="icon-button" aria-label="View features">
+              <i data-lucide="sparkles" class="h-4 w-4"></i>
+            </a>
+            <a href="assets/ProjectUpdateCloner-Setup.exe" download class="primary-button">
+              <i data-lucide="download" class="h-4 w-4"></i>
+              <span>Download for Windows</span>
+            </a>
+          </div>
+
+          <button class="icon-button md:hidden" id="menuButton" aria-label="Open navigation" aria-expanded="false">
+            <i data-lucide="menu" class="h-5 w-5"></i>
+          </button>
+        </nav>
+
+        <div class="hidden border-t border-white/10 bg-ink/95 px-5 py-4 md:hidden" id="mobileMenu">
+          <div class="flex flex-col gap-4 text-sm font-medium text-slate-200">
+            <a href="index#features">Features</a>
+            <a href="index#workflow">Workflow</a>
+            <a href="blogs">Blogs</a>
+            <a href="index#download">Download</a>
+            <a href="assets/ProjectUpdateCloner-Setup.exe" download class="primary-button justify-center">
+              <i data-lucide="download" class="h-4 w-4"></i>
+              <span>Download for Windows</span>
+            </a>
+          </div>
+        </div>
+      </header>
+
+      <main>
+        <article class="article-wrap px-5 sm:px-6 lg:px-8">
+          <div class="mx-auto max-w-4xl">
+            <a href="blogs" class="back-link">
+              <i data-lucide="arrow-left" class="h-4 w-4"></i>
+              Back to blogs
+            </a>
+
+            <div class="mt-8">
+              <p class="section-kicker">Guide</p>
+              <h1 class="mt-4 text-4xl font-bold leading-[1.08] text-white sm:text-5xl">
+                How to package only changed project files for a clean release
+              </h1>
+              <div class="mt-5 flex flex-wrap gap-4 text-sm text-slate-400">
+                <span>May 20, 2026</span>
+                <span>5 min read</span>
+                <span>Project Update Cloner</span>
+              </div>
+            </div>
+
+            <div class="blog-thumb article-thumb mt-10">
+              <i data-lucide="folder-sync" class="h-14 w-14 text-white"></i>
+            </div>
+
+            <div class="article-body">
+              <p>
+                Update packages are easiest to trust when they contain only the files that actually changed. Copying a full project folder works, but it is slow, noisy, and easy to review incorrectly.
+              </p>
+
+              <h2>Start with the modified date</h2>
+              <p>
+                Project Update Cloner lets you choose a source project, an output folder, and a modified date. The app then collects the matching files and keeps their relative folder paths intact, so the final package mirrors the real project structure.
+              </p>
+
+              <h2>Remove directories that should never ship</h2>
+              <p>
+                Build folders, dependency folders, logs, and repository metadata should stay out of most update bundles. Skipping folders such as `.git`, `node_modules`, `bin`, `obj`, and log directories keeps the package focused.
+              </p>
+
+              <h2>Use filters for smaller releases</h2>
+              <p>
+                When a release only needs certain file types, filters like `*.php`, `*.js`, and `*.css` help reduce the output. This makes the bundle easier to inspect and faster to deliver.
+              </p>
+
+              <h2>Export with a log</h2>
+              <p>
+                A ZIP export is useful for handoff, but the update log is what makes the package auditable. The generated `update-log.txt` records what was included and notes files that could not be accessed.
+              </p>
+
+              <div class="article-cta">
+                <div>
+                  <h2>Ready to build cleaner update bundles?</h2>
+                  <p>Install the Windows app and package your next project update by date.</p>
+                  <p class="support-note mt-2">
+                    <i data-lucide="info" class="h-4 w-4"></i>
+                    Currently supports Windows 11 only.
+                  </p>
+                </div>
+                <a href="assets/ProjectUpdateCloner-Setup.exe" download class="primary-button">
+                  <i data-lucide="download" class="h-4 w-4"></i>
+                  <span>Download</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </article>
+      </main>
+
+      <footer class="border-t border-white/10 px-5 py-10 sm:px-6 lg:px-8">
+        <div class="mx-auto flex max-w-7xl flex-col justify-between gap-8 md:flex-row md:items-center">
+          <div class="flex items-center gap-3">
+            <img src="assets/app-logo.png" alt="" class="h-10 w-10 rounded" />
+            <div>
+              <p class="font-bold text-white">Project Update Cloner</p>
+              <p class="text-sm text-slate-400">Focused update bundles for Windows teams.</p>
+            </div>
+          </div>
+          <div class="flex flex-wrap gap-5 text-sm text-slate-400">
+            <a href="index" class="nav-link">Home</a>
+            <a href="index#features" class="nav-link">Features</a>
+            <a href="index#workflow" class="nav-link">Workflow</a>
+            <a href="blogs" class="nav-link">Blogs</a>
+            <a href="index#download" class="nav-link">Download</a>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <button class="go-top" id="goTopButton" type="button" aria-label="Go to top">
+      <i class="bi bi-arrow-up"></i>
+    </button>
+
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="app.js"></script>
+  </body>
+</html>

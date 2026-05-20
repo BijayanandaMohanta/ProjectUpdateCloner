@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <UseWindowsForms>true</UseWindowsForms>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <ApplicationIcon>..\..\Assets\app.ico</ApplicationIcon>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="..\payload\ProjectUpdateCloner.exe" LogicalName="payload.ProjectUpdateCloner.exe" />
+    <EmbeddedResource Include="..\payload\setup.cmd" LogicalName="payload.setup.cmd" />
+    <EmbeddedResource Include="..\payload\setup.ps1" LogicalName="payload.setup.ps1" />
+    <EmbeddedResource Include="..\payload\uninstall.ps1" LogicalName="payload.uninstall.ps1" />
+  </ItemGroup>
+</Project>

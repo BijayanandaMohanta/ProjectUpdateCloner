@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blogs | Project Update Cloner</title>
+    <meta
+      name="description"
+      content="Read practical guides about preparing cleaner project update packages with Project Update Cloner."
+    />
+    <link rel="icon" type="image/png" href="assets/app-logo.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ["Google Sans", "DM Sans", "Product Sans", "Arial", "ui-sans-serif", "system-ui", "sans-serif"],
+            },
+            colors: {
+              ink: "#080c17",
+              brand: "#2f6bff",
+              mint: "#2f6bff",
+              amber: "#5f8dff",
+              rose: "#2f6bff",
+            },
+          },
+        },
+      };
+    </script>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="bg-ink text-white antialiased">
+    <div class="site-shell overflow-hidden">
+      <header class="fixed inset-x-0 top-0 z-50 border-b border-white/10 bg-ink/75 px-5 backdrop-blur-2xl sm:px-6 lg:px-8">
+        <nav class="mx-auto flex h-16 max-w-7xl items-center justify-between">
+          <a href="index" class="flex items-center gap-3" aria-label="Project Update Cloner home">
+            <img src="assets/app-logo.png" alt="" class="h-9 w-9 rounded shadow-brand" />
+            <span class="brand-name">UpdateCloner</span>
+          </a>
+
+          <div class="hidden items-center gap-7 text-sm font-medium text-slate-300 md:flex">
+            <a href="index#features" class="nav-link">Features</a>
+            <a href="index#workflow" class="nav-link">Workflow</a>
+            <a href="blogs" class="nav-link text-white">Blogs</a>
+            <a href="index#download" class="nav-link">Download</a>
+          </div>
+
+          <div class="hidden items-center gap-3 md:flex">
+            <a href="index#features" class="icon-button" aria-label="View features">
+              <i data-lucide="sparkles" class="h-4 w-4"></i>
+            </a>
+            <a href="assets/ProjectUpdateCloner-Setup.exe" download class="primary-button">
+              <i data-lucide="download" class="h-4 w-4"></i>
+              <span>Download for Windows</span>
+            </a>
+          </div>
+
+          <button class="icon-button md:hidden" id="menuButton" aria-label="Open navigation" aria-expanded="false">
+            <i data-lucide="menu" class="h-5 w-5"></i>
+          </button>
+        </nav>
+
+        <div class="hidden border-t border-white/10 bg-ink/95 px-5 py-4 md:hidden" id="mobileMenu">
+          <div class="flex flex-col gap-4 text-sm font-medium text-slate-200">
+            <a href="index#features">Features</a>
+            <a href="index#workflow">Workflow</a>
+            <a href="blogs">Blogs</a>
+            <a href="index#download">Download</a>
+            <a href="assets/ProjectUpdateCloner-Setup.exe" download class="primary-button justify-center">
+              <i data-lucide="download" class="h-4 w-4"></i>
+              <span>Download for Windows</span>
+            </a>
+          </div>
+        </div>
+      </header>
+
+      <main>
+        <section class="page-hero px-5 sm:px-6 lg:px-8">
+          <div class="mx-auto max-w-7xl">
+            <div class="hero-tag mb-6 inline-flex items-center gap-2 rounded px-4 py-2 text-sm font-semibold">
+              <i data-lucide="newspaper" class="h-4 w-4"></i>
+              Update packaging insights
+            </div>
+            <h1 class="max-w-4xl text-4xl font-bold leading-[1.08] text-white sm:text-5xl">
+              Blogs for cleaner project update workflows.
+            </h1>
+            <p class="mt-6 max-w-2xl text-base leading-8 text-slate-300 sm:text-lg">
+              Practical notes for developers and teams who need predictable update bundles without copying the entire project every time.
+            </p>
+          </div>
+        </section>
+
+        <section class="px-5 pb-24 sm:px-6 lg:px-8">
+          <div class="mx-auto max-w-7xl">
+            <a href="blog-view" class="blog-card group">
+              <div class="blog-thumb">
+                <i data-lucide="folder-sync" class="h-12 w-12 text-white"></i>
+              </div>
+              <div class="blog-content">
+                <p class="section-kicker">Guide</p>
+                <h2>How to package only changed project files for a clean release</h2>
+                <p>
+                  Learn how date-based file selection, folder exclusions, filters, ZIP export, and logs make update delivery more reliable.
+                </p>
+                <div class="mt-6 flex flex-wrap items-center gap-4 text-sm text-slate-400">
+                  <span>May 20, 2026</span>
+                  <span>5 min read</span>
+                  <span class="read-link">Read article</span>
+                </div>
+              </div>
+            </a>
+          </div>
+        </section>
+      </main>
+
+      <footer class="border-t border-white/10 px-5 py-10 sm:px-6 lg:px-8">
+        <div class="mx-auto flex max-w-7xl flex-col justify-between gap-8 md:flex-row md:items-center">
+          <div class="flex items-center gap-3">
+            <img src="assets/app-logo.png" alt="" class="h-10 w-10 rounded" />
+            <div>
+              <p class="font-bold text-white">Project Update Cloner</p>
+              <p class="text-sm text-slate-400">Focused update bundles for Windows teams.</p>
+            </div>
+          </div>
+          <div class="flex flex-wrap gap-5 text-sm text-slate-400">
+            <a href="index" class="nav-link">Home</a>
+            <a href="index#features" class="nav-link">Features</a>
+            <a href="index#workflow" class="nav-link">Workflow</a>
+            <a href="blogs" class="nav-link">Blogs</a>
+            <a href="index#download" class="nav-link">Download</a>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <button class="go-top" id="goTopButton" type="button" aria-label="Go to top">
+      <i class="bi bi-arrow-up"></i>
+    </button>
+
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="app.js"></script>
+  </body>
+</html>

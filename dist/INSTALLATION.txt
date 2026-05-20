@@ -1,0 +1,21 @@
+Project Update Cloner - Windows Installation
+
+Requirements:
+- Windows 11 64-bit.
+- No separate .NET runtime is required. The application is packaged as self-contained.
+- PowerShell must be available. Windows 11 includes it by default.
+- Administrator permission is not required. The installer installs for the current Windows user.
+
+Install:
+1. Run ProjectUpdateCloner-Setup.exe.
+2. The app is installed under the current user's LocalAppData folder.
+3. Desktop and Start Menu shortcuts are created.
+4. The app starts automatically after installation.
+
+Uninstall:
+- Use Windows Settings > Apps > Installed Apps > Project Update Cloner > Uninstall.
+
+Safety:
+- The app copies matching changed files into a new update package folder.
+- It preserves the selected project folder structure.
+- It never deletes or changes source project files or folders.
